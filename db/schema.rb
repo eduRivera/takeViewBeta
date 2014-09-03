@@ -11,19 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901083723) do
+ActiveRecord::Schema.define(version: 20140903090814) do
 
   create_table "photos", force: true do |t|
-    t.string   "img_url"
+    t.integer  "point_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
+  add_index "photos", ["point_id"], name: "index_photos_on_point_id"
+
   create_table "points", force: true do |t|
-    t.integer  "route_id"
     t.string   "latlon"
+    t.integer  "route_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "photos_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "user_id"
   end
 
 end
