@@ -24,9 +24,10 @@ class CreatTakeViewController < ApplicationController
             longitude = EXIFR::JPEG.new(Rails.root.join('public/images/'+photo_id+'/'+photo_image_name).to_s).gps.longitude
            	
            	latlon = latitude.to_s+","+longitude.to_s
-           	photo_point_id = photo.point_id
-           	point = Point.find(photo_point_id)
-           	point.update_attribute(:latlon, latlon)
+           	photo.update_attribute(:latlon, latlon)
+           	
+           	point_id = photo.point_id
+           	point = Point.find(point_id)
            	point.update_attribute(:user_id, 1) #since we dont have user
            
           }
