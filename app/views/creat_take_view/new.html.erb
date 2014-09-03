@@ -1,6 +1,7 @@
 <%= javascript_include_tag 'creat_take_view/index', 'data-turbolinks-track' => true %>
 <%= stylesheet_link_tag    'creat_take_view.css', media: 'all', 'data-turbolinks-track' => true %>
-<h1>LAT : <%=@latitude%></h1>
-<h1>LONG : <%=@longitude%></h1>
-
-<%= render :partial => "form.html" %>
+<div class="container">
+	<div class="box-center-responsive">
+		<%= render :partial => "form.html" %>
+	</div>
+</div>
