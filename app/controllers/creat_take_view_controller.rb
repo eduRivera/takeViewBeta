@@ -18,8 +18,16 @@ class CreatTakeViewController < ApplicationController
             photo_id = photo.id
             photo_id = photo_id.to_s
             photo_image_name = photo.image_file_name
-            latitude = EXIFR::JPEG.new(Rails.root.join('public/images/'+photo_id+'/'+photo_image_name).to_s).gps.latitude
-            longitude = EXIFR::JPEG.new(Rails.root.join('public/images/'+photo_id+'/'+photo_image_name).to_s).gps.longitude
+            if EXIFR::JPEG.new(Rails.root.join('public/images/'+photo_id+'/'+photo_image_name).to_s).gps == nil 
+            	
+            	latitude = nil
+            	longitude = nil
+
+            else
+							latitude = EXIFR::JPEG.new(Rails.root.join('public/images/'+photo_id+'/'+photo_image_name).to_s).gps.latitude 
+            	longitude = EXIFR::JPEG.new(Rails.root.join('public/images/'+photo_id+'/'+photo_image_name).to_s).gps.longitude
+            end
+            
            	
            	latlon = latitude.to_s+","+longitude.to_s
            	photo.update_attribute(:latlon, latlon)
@@ -54,6 +62,15 @@ class CreatTakeViewController < ApplicationController
   	else
   		render :action => 'route'
   	end
+	end
+
+	def delete_points
+		arrayPoints = Point.where(user_id: 1, route_id: 0)
+		arrayPoints.each do |point|
+			point.photos.destroy_all
+      point.destroy
+    end
+    redirect_to new_path
 	end
 
 end

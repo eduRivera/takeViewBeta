@@ -1,0 +1,8 @@
+<%= bootstrap_form_tag url: '/save' do |f| %>
+	<%= label_tag 'Route Name', nil, class: ''%>
+	<%= f.text_field :name, placeholder: "Enter Route Name", hide_label: true, required: true %>
+	<%= label_tag 'Description', nil, class: ''%>
+	<%= f.text_area(:description,hide_label: true,placeholder: "Description (optional)")%>
+	<%= label_tag 'Tags', nil, class: ''%>
+	<%= f.text_field :tags, placeholder: "Tags...",hide_label: true %>
+<% end %>

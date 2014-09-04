@@ -1,9 +1,13 @@
-<%= bootstrap_form_tag url: '/save' do |f| %>
-	<%= label_tag 'Route Name', nil, class: ''%>
-	<%= f.text_field :name, placeholder: "Enter Route Name", hide_label: true, required: true %>
-	<%= label_tag 'Description', nil, class: ''%>
-	<%= f.text_area(:description,hide_label: true,placeholder: "Description (optional)")%>
-	<%= label_tag 'Tags', nil, class: ''%>
-	<%= f.text_field :tags, placeholder: "Tags...",hide_label: true %>
-	<%= f.submit class: ''%>
-<% end %>
+<%= javascript_include_tag 'creat_take_view/route', 'data-turbolinks-track' => true %>
+<div class="nav">
+	<a class="nav-next" id="nav-next"></a> 
+	<a href="/delete" class="nav-delete"></a>
+</div>
+<div class="container">
+	<div class="container-body">
+		<div class="box-center-responsive">
+			<%= render :partial => "form_route.html" %>
+		</div>
+	</div>
+</div>
+

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get 'route' => 'creat_take_view#new_route'
   post 'save'=> 'creat_take_view#create_route'
+  get 'delete' =>'creat_take_view#delete_points'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
