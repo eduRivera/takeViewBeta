@@ -1,24 +1,98 @@
 // Place all the styles related to the creat_takeView controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#file_{
+	display:none;
+}
 .container{
-	
+	width:100%;
+	height:93%;
+	overflow: hidden;
+}
+.container-body{
+  width: 100%;
+  height: 100%;
+  background-image: url(bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.nav{
+	width:100%;
+	height:40px;
+	background-color:#555555;
+}
+.nav-next{
+	float: right;
+	margin-top:2px;
+	margin-right:5px;
+	width:40px;
+	height:35px;
+	background-image:url(next.png);
+	background-repeat: no-repeat;
+  	
+}
+.nav-delete{
+	float: left;
+	margin-top:2px;
+	margin-left:10px;
+	width:40px;
+	height:35px;
+	border-right: 2px solid #ccc;
+	background-image:url(delete.png);
+	background-repeat: no-repeat;
+}
+.nav-delete-none{
+	float: left;
+	margin-top:2px;
+	margin-left:10px;
+	width:40px;
+	height:35px;
+	border-right: 2px solid #ccc;
 }
 .box-center-responsive {
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
+	margin: auto;
+  	position: absolute;
+  	top: 0; left: 0; bottom: 0; right: 0;
+  	width: 300px;
+  	height: 90%;
+  	// border: 1px solid red;
+  	padding:27px;
 }
 .box-center-responsive .box-center-responsive-heading,
 .box-center-responsive .box-center-responsive-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
+  	position: relative;
+  	height: auto;
+  	-webkit-box-sizing: border-box;
+     	-moz-box-sizing: border-box;
+         	 box-sizing: border-box;
+  	padding: 10px;
+  	font-size: 16px;
 }
 .box-center-responsive .box-center-responsive-control:focus {
-  z-index: 2;
+  	z-index: 2;
+}
+.btn-upload{
+	margin-top: 120px;
+	width: 250px;
+}
+.good-upload{
+	width:130px;
+	height:130px;
+	margin-left: 80px;
+	margin-top:10px;
+	background-image:url(tick.png);
+	background-repeat: no-repeat;
+}
+.loading-gif{
+	display:none;
+	width:128px;
+	height:128px;
+	margin-left:60px;
+	margin-top:10px;
+	background-image:url(ajax-loader.GIF);
+	background-repeat: no-repeat;
 }

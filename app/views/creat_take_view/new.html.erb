@@ -1,7 +1,18 @@
 <%= javascript_include_tag 'creat_take_view/index', 'data-turbolinks-track' => true %>
 <%= stylesheet_link_tag    'creat_take_view.css', media: 'all', 'data-turbolinks-track' => true %>
+<div class="nav">
+	<a class="nav-next" id="nav-next"></a>
+	<a class="nav-delete-none"></a> 
+	<!-- <a class="nav-delete"></a> -->
+</div>
 <div class="container">
-	<div class="box-center-responsive">
-		<%= render :partial => "form.html" %>
+	<div class="container-body">
+		<div class="box-center-responsive">
+			<%= render :partial => "form.html" %>
+			<div class="loading-gif" id="loading-gif"></div>
+			<% if flash[:upload] %>
+    			<div class="good-upload" id="good-upload"></div>
+  			<% end %>
+		</div>
 	</div>
 </div>

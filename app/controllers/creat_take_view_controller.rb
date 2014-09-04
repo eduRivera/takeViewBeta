@@ -4,17 +4,15 @@ class CreatTakeViewController < ApplicationController
 	end
 
 	def new 
-		@latitude = EXIFR::JPEG.new(Rails.root.join('app/assets/images/IMG_0145.JPG').to_s).gps.latitude
-		@longitude = EXIFR::JPEG.new(Rails.root.join('app/assets/images/IMG_0145.JPG').to_s).gps.longitude
 		@points = Point.new 
 	end
 
 	def create
 		@point = Point.new(params[:points])
 		if @point.save
-			  if params[:images]
+			  if params[:file]
        
-          params[:images].each do |image|
+          params[:file].each do |image|
             photo = @point.photos.create(image: image)
 
             photo_id = photo.id
@@ -33,7 +31,8 @@ class CreatTakeViewController < ApplicationController
            
           end
         end
-			render :action =>'new_route'
+      flash[:upload] = "Successfully created"
+			redirect_to new_path
 		else
 			render :action =>'new'
 		end
