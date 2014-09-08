@@ -11,13 +11,14 @@ class CreatTakeViewController < ApplicationController
 		@point = Point.new(params[:points])
 		if @point.save
 			  if params[:file]
-       
+
           params[:file].each do |image|
             photo = @point.photos.create(image: image)
 
             photo_id = photo.id
             photo_id = photo_id.to_s
             photo_image_name = photo.image_file_name
+
             if EXIFR::JPEG.new(Rails.root.join('public/images/'+photo_id+'/'+photo_image_name).to_s).gps == nil 
             	
             	latitude = nil
@@ -51,14 +52,14 @@ class CreatTakeViewController < ApplicationController
 	end
 
 	def create_route
-		route = Route.new(name: params[:name], description: params[:description], tags: params[:tags])
+		route = Route.new(name: params[:name], description: params[:description], tags: params[:tags], user_id: 1)
 		if route.save
 		array_points = Point.where(user_id: 1, route_id: 0)
     array_points.each do |point|
       point.update(route_id: route.id)
     end
 
-    render :action => 'index'
+    redirect_to share_path
   	else
   		render :action => 'route'
   	end
@@ -71,6 +72,8 @@ class CreatTakeViewController < ApplicationController
       point.destroy
     end
     redirect_to new_path
+	end
+	def share
 	end
 
 end

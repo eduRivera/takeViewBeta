@@ -1,0 +1,42 @@
+<%= javascript_include_tag 'view_take_view/jssor.core', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'view_take_view/jssor.slider', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'view_take_view/jssor.utils', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'view_take_view/show', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'view_take_view/maps', 'data-turbolinks-track' => true %>
+<!-- Jssor Slider Begin -->
+<!-- You can move inline styles to css file or css block. -->
+<div id="slider1_container" class="box-center-responsive-slide" >
+
+    <!-- Slides Container -->
+    <div u="slides" class="slide-container"style="">
+        <% @points.each do |point| %>
+			<%point.photos.each do |photo|%>
+			<div>
+				<img u="image" src="<%= photo.image.url()%>" />
+				<img u="thumb" src="<%= photo.image.url()%>" />
+			</div>
+			<% end %>
+		<% end %>
+         <!-- Arrow Left -->
+        <span u="arrowleft" class="jssora05l" style="width: 40px; 
+        height: 40px; top: 158px; left: 8px;">
+        </span>
+        <!-- Arrow Right -->
+        <span u="arrowright" class="jssora05r" style="width: 40px; height: 40px; top: 158px; right: 8px">
+        </span>
+    </div>
+
+    <!-- Thumbnail Navigator Skin Begin -->
+    <div u="thumbnavigator" class="jssort01">
+        <!-- Thumbnail Item Skin Begin -->
+        <div u="slides" style="cursor: move;">
+            <div u="prototype" class="p" style="position: absolute; width: 72px; height: 72px; top: 0; left: 0;">
+                <div class=w><thumbnailtemplate class="thumbnailtemplate"></thumbnailtemplate></div>
+                <div class=c>
+                </div>
+            </div>
+        </div>
+        <!-- Thumbnail Item Skin End -->
+    </div>
+</div>
+<!-- Jssor Slider End -->

@@ -2,11 +2,12 @@
 <div class="nav">
 	<a href="/route"class="nav-next" id="nav-next"></a>
 	<a class="nav-delete-none"></a> 
+	<div class="nav-title"><p>PHOTOS</p></div>
 	<!-- <a class="nav-delete"></a> -->
 </div>
 <div class="container">
 	<div class="container-body">
-		<div class="box-center-responsive">
+		<div class="box-center-responsive-big">
 			<%= render :partial => "form.html" %>
 			<div class="loading-gif" id="loading-gif"></div>
 			<% if flash[:upload] %>

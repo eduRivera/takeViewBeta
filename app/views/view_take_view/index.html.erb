@@ -1,0 +1,5 @@
+<ul>
+<% @routes.each do |route| %>
+	<h1><li><a href="takeview/show/<%= route.id %>"><%= route.name %></a></li></h1>
+<% end %>
+</ul>
