@@ -3,10 +3,13 @@
 <%= javascript_include_tag 'view_take_view/jssor.utils', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'view_take_view/show', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'view_take_view/maps', 'data-turbolinks-track' => true %>
-<!-- Jssor Slider Begin -->
-<!-- You can move inline styles to css file or css block. -->
-<div id="slider1_container" class="box-center-responsive-slide" >
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
+
+<input type="hidden" id="route_id" value="<%=@route.id%>">
+<div id="map-canvas"></div>
+<div id="mini-map"></div>
+<div id="slider1_container" class="box-center-responsive-slide" >
     <!-- Slides Container -->
     <div u="slides" class="slide-container"style="">
         <% @points.each do |point| %>
