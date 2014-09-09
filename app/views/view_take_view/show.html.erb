@@ -12,12 +12,14 @@
 <div id="slider1_container" class="box-center-responsive-slide" >
     <!-- Slides Container -->
     <div u="slides" class="slide-container"style="">
+        <%index=0%>
         <% @points.each do |point| %>
 			<%point.photos.each do |photo|%>
-			<div>
-				<img u="image" src="<%= photo.image.url()%>" />
+			<div id="<%=index%>" name="hola">
+				<img u="image" id="<%=photo.latlon%>" src="<%= photo.image.url()%>" />
 				<img u="thumb" src="<%= photo.image.url()%>" />
 			</div>
+            <%index = index + 1 %>
 			<% end %>
 		<% end %>
          <!-- Arrow Left -->

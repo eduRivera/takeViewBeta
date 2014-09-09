@@ -85,13 +85,9 @@ jQuery(document).ready(function ($) {
     };
 
     var jssor_slider1 = new $JssorSlider$("slider1_container", options);
-    //responsive code begin
-    //you can remove responsive code if you don't want the slider scales while window resizes
+    jssor_slider1.$On($JssorSlider$.$EVT_PARK,function(slideIndex){var num = document.getElementById(slideIndex); idImg = num.childNodes[0].nextElementSibling.id; slideTransition(idImg)});
+    // jssor_slider1.addEventListener("$EVT_POSITION_CHANGE", myFuction());
+   
 
-
-
-    //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
-    //    $(window).bind("orientationchange", ScaleSlider);
-    //}
-    //responsive code end
 });
+

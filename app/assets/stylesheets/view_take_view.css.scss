@@ -50,8 +50,9 @@
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;   
-    width: 400px; 
-    height: 300px; 
+    width: 500px; 
+    height: 400px; 
+    box-shadow: 10px 10px 5px #555555;
     overflow: hidden;
 }
 /* jssor slider arrow navigator skin 05 css */
@@ -146,8 +147,8 @@
   position:absolute;
   top:450px;
   left: 30px;
-  height:120px;
-  width:180px;
+  height:200px;
+  width:300px;
   transition: width 0.5s, height 0.5s, transform 0.5s;
 }
 
