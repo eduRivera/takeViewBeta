@@ -85,7 +85,7 @@ jQuery(document).ready(function ($) {
     };
 
     var jssor_slider1 = new $JssorSlider$("slider1_container", options);
-    jssor_slider1.$On($JssorSlider$.$EVT_PARK,function(slideIndex){var num = document.getElementById(slideIndex); idImg = num.childNodes[0].nextElementSibling.id; slideTransition(idImg)});
+    jssor_slider1.$On($JssorSlider$.$EVT_PARK,function(slideIndex){var divImage = document.getElementById(slideIndex); var idImg = divImage.childNodes[0].nextSibling.id; slideTransition(idImg);});
     // jssor_slider1.addEventListener("$EVT_POSITION_CHANGE", myFuction());
    
 
